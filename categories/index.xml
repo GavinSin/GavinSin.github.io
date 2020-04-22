@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Categories on Gavin</title>
-    <link>https://GavinSin.github.io/categories/</link>
-    <description>Recent content in Categories on Gavin</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://GavinSin.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Categories on Gavin</title><link>https://GavinSin.github.io/categories/</link><description>Recent content in Categories on Gavin</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 15 Apr 2020 15:57:46 +0000</lastBuildDate><atom:link href="https://GavinSin.github.io/categories/index.xml" rel="self" type="application/rss+xml"/><item><title>API</title><link>https://GavinSin.github.io/categories/api/</link><pubDate>Wed, 15 Apr 2020 15:57:46 +0000</pubDate><guid>https://GavinSin.github.io/categories/api/</guid><description/></item><item><title>Definitions</title><link>https://GavinSin.github.io/categories/definitions/</link><pubDate>Wed, 15 Apr 2020 15:57:46 +0000</pubDate><guid>https://GavinSin.github.io/categories/definitions/</guid><description/></item><item><title>Web Service</title><link>https://GavinSin.github.io/categories/web-service/</link><pubDate>Wed, 15 Apr 2020 15:57:46 +0000</pubDate><guid>https://GavinSin.github.io/categories/web-service/</guid><description/></item></channel></rss>
