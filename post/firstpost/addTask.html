@@ -1,0 +1,109 @@
+<html>
+	<body>
+		
+		<div class="main_section">
+			<div>
+				<h2>Resources to help you:</h2>
+				<ul>
+				  <li><a href="https://www.youtube.com/watch?v=Ggh_y-33Eso">Learn HTML in one video</a></li>
+				  <li><a href="https://www.youtube.com/watch?v=fju9ii8YsGs">Learn Javascript in one video</a></li>
+				  <li><a href="https://www.w3schools.com/html/html_tables.asp">Table in HTML</a></li>
+				  <li><a href="https://stackoverflow.com/questions/19199942/add-table-row-with-javascript-onclick">
+				  Modified table properties using Javascript</a>
+				  </li>
+				  <li><a href="https://www.geeksforgeeks.org/html-clearing-the-input-field/">Clearing Input Field</a></li>
+				</ul>
+			</div>
+			
+			<div style="margin: 3% 0%;">
+				<h2>Task List</h2>
+				<table id="myTable">
+					<tr>
+						<th>Task Name</th>
+						<th>Task Detail</th>
+						<th>Assign To</th>
+					</tr>
+					<tr id="1">
+						<td>Add Task Page</td>
+						<td>
+						Create an Add Task Page using HTML and JS. Through this, you will learn how a simple website is made 
+						,and some simple scripting with Javascript. Javascript plays an important role in todays web and is must learn 
+						for attacking web application
+						</td>
+						<td>Gavin</td>
+					</tr>
+					<tr>
+						<td><input type="text" id="taskName" class="textInput"></td>
+						<td><input type="text" id="taskDetail" class="textInput"></td>
+						<td><input type="text" id="assignTo" class="textInput"></td>
+						<td><input type="button" class="button" value="Add Task" onclick="addField();"></td>
+					</tr>
+				</table>
+			</div>
+			
+			<p><i>This is page is created by Gavin, to help friend learn some HTML, JS basics.</i></p>
+		</div>
+		
+	</body>
+</html>
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  max-width: 700px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.main_section {
+	margin: 5% 12%;
+}
+
+.textInput {
+	width: 100%; 
+    box-sizing: border-box;
+}
+
+.red {
+ background-color: red;
+}
+</style>
+
+<script>
+function addField () {
+        var myTable = document.getElementById("myTable");
+        var currentIndex = myTable.rows.length - 1;
+        var currentRow = myTable.insertRow( myTable.rows.length - 1 );
+		currentRow.setAttribute("id", currentIndex);
+		
+        var currentCell = currentRow.insertCell(-1);
+		var inputBox1 = document.getElementById("taskName").value;
+		var taskName = document.createTextNode(inputBox1);
+		currentCell.appendChild(taskName);
+		
+		currentCell = currentRow.insertCell(-1);
+		var inputBox2 = document.getElementById("taskDetail").value;
+		var taskDetail = document.createTextNode(inputBox2);
+		currentCell.appendChild(taskDetail);
+		
+		currentCell = currentRow.insertCell(-1);
+		var inputBox3 = document.getElementById("assignTo").value;
+		var designatedPerson = document.createTextNode(inputBox3);
+		currentCell.appendChild(designatedPerson);
+		
+		document.getElementById("taskName").value = "";
+		document.getElementById("taskDetail").value = "";
+		document.getElementById("assignTo").value = "";
+    }
+</script>
+
