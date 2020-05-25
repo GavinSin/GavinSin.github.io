@@ -1,0 +1,372 @@
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript">
+		  google.charts.load('current', {'packages':['corechart']});
+		  google.charts.setOnLoadCallback(drawChart);
+
+		  function drawChart() {
+
+			var data = google.visualization.arrayToDataTable([
+			  ['Risk', 'Risk Weightage'],
+			  ['Supply Chain Risk',     4],
+			  ['Workforce shortage',      3],
+			  ['Cash Flow',      2],
+			  ['Cyber Vulnerabilities (Advanced Manufacturing 4.0)',  1]
+			]);
+
+			var options = {
+			  title: 'Your Business Risk'
+			};
+
+			var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+			chart.draw(data, options);
+		  }
+		</script>
+	</head>
+	<body>
+		<div id="main_section">
+			<h2>How PruRisk Works</h2>
+				
+			<section id="intro_withSampleQn">
+				<p>
+					The objective of a risk questionnaire is to identified common risks that a business may have been overlooked and provide suggested solutions.
+				</p>
+				
+				<p>
+					To access and evaluate the SME business risk, a questionnaire, including 20 questions, was developed. Several questions collected general information about how an SME business managed and dealt with common types of business risk faced by its specific industry. Sample of a risk preparedness question is:
+				</p>
+				
+				
+				<div style='transform: scale(0.7, 0.65); position: relative; top: -46px; height: 360px;'>
+					<h2 style="font-size: 36px">How prepared you are with the business continuity plan (BCP) ?</h2>
+					
+					<div id='block-11' style='padding: 10px;'>
+						<label for='option-11' style=' padding: 5px; font-size: 2.2rem;'>
+							<input type='radio' name='sampleOption' value='6/24' id='option-11' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+							a. Don't have any BCP plan
+						</label>
+						<span id='result-11'></span>
+					</div>
+					
+					<div id='block-12' style='padding: 10px;'>
+						<label for='option-12' style=' padding: 5px; font-size: 2.2rem;'>
+							<input type='radio' name='sampleOption' value='6' id='option-12' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+							b. Your plan is documented long ago and not up-to-date
+						</label>
+						<span id='result-12'></span>
+					</div>
+					
+					<div id='block-13' style='padding: 10px;'>
+						<label for='option-13' style=' padding: 5px; font-size: 2.2rem;'>
+							<input type='radio' name='sampleOption' value='1/3' id='option-13' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+							c. Your plan is documented to date but had not been tested
+						</label>
+						<span id='result-13'></span>
+					</div>
+					
+					<div id='block-14' style='padding: 10px;'>
+						<label for='option-14' style=' padding: 5px; font-size: 2.2rem;'>
+							<input type='radio' name='sampleOption' value='1/6' id='option-14' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+							d. Your plan is documented and has been tested within the last 12 months
+						</label>
+						<span id='result-14'></span>
+					</div>
+				</div>
+			</section>
+			
+			<section id="QuestionAndPts">
+				<h3>Question and the Points</h3>
+				<p>					
+					A question can comes in the form of two or four options. Ranging from the minimum of 0 point to maximum of 3 points. The purpose of the question is to identify preparedness of a particular risk.
+				</p>
+				<!--
+					a. Did not prepared at all 	(0%	  ,	0 point	)
+					b. Prepared a bit 			(25%  ,	1 point	)
+					c. Prepared quite okay 		(50%  ,	2 points)
+					d. Prepared very well 		(100% ,	3 points)
+				-->
+				
+				<!-- Start of Selection of 4 Options -->
+				<div>
+					<div style='transform: scale(0.7, 0.65); position: relative; top: -29px; height: 197px;' onclick='selectedPreparedness()' id="option-menu2">
+						
+						<div style='padding: 10px;'>
+							<label style=' padding: 5px; font-size: 2.2rem;'>
+								<input type='radio' name='select4option' id='option-21' value='0' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+								a. Did not prepared at all
+							</label>
+						</div>
+						
+						<div style='padding: 10px;'>
+							<label style=' padding: 5px; font-size: 2.2rem;'>
+								<input type='radio' name='select4option' checked='true' id='option-22' value='1' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+								b. Prepared a bit
+							</label>
+						</div>
+						
+						<div style='padding: 10px;'>
+							<label style=' padding: 5px; font-size: 2.2rem;'>
+								<input type='radio' name='select4option' id='option-23' value='2' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+								c. Prepared quite okay
+							</label>
+						</div>
+						
+						<div style='padding: 10px;'>
+							<label for='option-24' style=' padding: 5px; font-size: 2.2rem;'>
+								<input type='radio' name='select4option' id='option-24' value='3' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+								d. Prepared very well
+							</label>
+						</div>
+						
+					</div>
+					<!-- End of Selection of 4 Options -->
+					<div id="result-container">
+						<div style="width:25%" id='result-percent'>1 point</div>
+					</div>
+				</div>
+				
+				
+				<!-- Start of Selection of 2 Options -->
+				<div id="selection2options">
+					<div style='transform: scale(0.7, 0.65); position: relative; height: 145px;' onclick='selectedPreparedness2()' id="option-menu3">
+						
+						<div style='padding: 10px;'>
+							<label style='font-size: 2.2rem;'>
+								<input type='radio' name='select2option' id='option-31' value='0' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+								No. Did not prepared at all
+							</label>
+						</div>
+						
+						<div style='padding: 10px;'>
+							<label for='option-24' style='font-size: 2.2rem;'>
+								<input type='radio' name='select2option' checked='true' id='option-32' value='3' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
+								Yes. Prepared very well
+							</label>
+						</div>
+						
+					</div>
+					<!-- End of Selection of 2 Options -->
+					<div id="result2-container">
+						<div style="width:100%" id='result2-percent'>3 points</div>
+					</div>
+				</div>
+			</section>
+			
+			<section id="twoOrMoreQns">
+				
+				<p>
+					If either option (c) or (d) is chosen, it shows that a business has prepared sufficiently enough of a particular risk. However, some risks required two or more questions. The following shows how it is being evaluated:
+				</p>
+
+				<p>Cyberattack risk: <br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Qn 1: 2 points out of a maximum of 3 points </pre><br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Qn 2: 3 points out of a maximum of 3 points</p>
+				
+				<p>The preparedness of cyberattack risk <br/>
+				= Total points selected / Total points of Cyberattack risk <br/>
+				= (  2  +  3  )  points / (  3  +  3  )  points <br/>
+				= 2.5 points >= 2 points (Prepared quite okay or more)
+				</p>
+				
+				<p>
+					When the 20qns questionnaire is finished, we will have a list of risks that a business didn't prepare or managed well in. 
+					With that many risks, it is important to sort with priorities and shows first the top 3 highest risks faced by the business. 
+				</p>
+			</section>
+			
+			<section>
+				<h3>Risk Priorities</h3>
+				
+				<p>
+					Rank order/priorities can be obtained from survey results done by industry experts, an example of risk 	ranking in the manufacturing industry is shown below:
+				</p>
+				
+				<div style="text-align: center;margin-bottom: 5%;">
+					<figure>
+					  <img src="Top10ManufactoringRisk.png" alt="Top 10 Manufactoring Risk" style="width:45%">
+					  <figcaption>Fig.1 - A list of Top 20 Manufactoring Risk from <a href="https://www.bdo.com/insights/industries/manufacturing-distribution/2017-bdo-manufacturing-riskfactor-report/2017-bdo-manufacturing-riskfactor-report" target="_blank">BDO</a></figcaption>
+					</figure>
+				</div>
+				
+				<p>
+					With the predefined priorities risk, we can sort the result easily as shown below. <br/>
+					First, identified those risk that has preparedness rating below 2.
+				</p>
+				
+				<table cellspacing="0" border="0">
+					<colgroup width="200"></colgroup>
+					<colgroup width="147"></colgroup>
+					<tbody>
+						<tr>
+							<td class="td_style" height="20" align="left" valign="bottom"><font color="#000000">Risk Name</font></td>
+							<td class="td_style" align="left" valign="bottom"><font color="#000000">Preparedness Rating (points) </font></td>
+						</tr>
+						<tr>
+							<td class="td_style" height="20" align="left" valign="middle" bgcolor="#FFFFFF"><font face="Arial" color="#000000">Key Person Loss</font></td>
+							<td class="td_style" align="right" valign="bottom" sdval="3" sdnum="1033;"><font color="#000000">3</font></td>
+						</tr>
+						<tr>
+							<td class="td_style" height="20" align="left" valign="middle" bgcolor="#FFFFFF"><font face="Arial" color="#000000">Workforce shortage</font></td>
+							<td class="td_style redBg_whiteColor" align="right" valign="bottom" sdval="0" sdnum="1033;">0</td>
+						</tr>
+						<tr>
+							<td class="td_style" height="20" align="left" valign="middle"><font face="Arial" color="#000000">Cash Flow</font></td>
+							<td class="td_style redBg_whiteColor" align="right" valign="bottom" sdval="1" sdnum="1033;">1</td>
+						</tr>
+						<tr>
+							<td class="td_style" height="34" align="left" valign="middle" bgcolor="#FFFFFF"><font face="Arial" color="#000000">Cyber Vulnerabilities (Advanced Manufacturing 4.0)</font></td>
+							<td class="td_style redBg_whiteColor" align="right" valign="bottom" sdval="0" sdnum="1033;">0</td>
+						</tr>
+						<tr>
+							<td class="td_style" height="20" align="left" valign="middle"><font face="Arial" color="#000000">Supply Chain Risk</font></td>
+							<td class="td_style redBg_whiteColor" align="right" valign="bottom" sdval="1" sdnum="1033;">1</td>
+						</tr>
+						<tr>
+							<td class="td_style" height="34" align="left" valign="middle" bgcolor="#FFFFFF"><font face="Arial" color="#000000">Corporate governance/compliance burden</font></td>
+							<td class="td_style" align="right" valign="bottom" sdval="2.5" sdnum="1033;"><font color="#000000">2.5</font></td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<p>Next, organize the poorly managed risks using predefined risk order.</p>
+				
+				<table cellspacing="0" border="0">
+					<colgroup width="200"></colgroup>
+					<colgroup width="147"></colgroup>
+					<tbody>
+						<tr>
+							<td class="td_style" height="20" align="left" valign="bottom"><font color="#000000">Risk Name</font></td>
+							<td class="td_style" align="left" valign="bottom"><font color="#000000">Preparedness Rating (points) </font></td>
+						</tr>
+						<tr>
+							<td class="td_style" height="20" align="left" valign="middle"><font face="Arial" color="#000000">Supply Chain Risk</font></td>
+							<td class="td_style redBg_whiteColor" align="right" valign="bottom" sdval="1" sdnum="1033;">1</td>
+						</tr>
+						<tr>
+							<td class="td_style" height="20" align="left" valign="middle" bgcolor="#FFFFFF"><font face="Arial" color="#000000">Workforce shortage</font></td>
+							<td class="td_style redBg_whiteColor" align="right" valign="bottom" sdval="0" sdnum="1033;">0</td>
+						</tr>
+						<tr>
+							<td class="td_style" height="20" align="left" valign="middle"><font face="Arial" color="#000000">Cash Flow</font></td>
+							<td class="td_style redBg_whiteColor" align="right" valign="bottom" sdval="1" sdnum="1033;">1</td>
+						</tr>
+						<tr>
+							<td class="td_style" height="34" align="left" valign="middle" bgcolor="#FFFFFF"><font face="Arial" color="#000000">Cyber Vulnerabilities (Advanced Manufacturing 4.0)</font></td>
+							<td class="td_style redBg_whiteColor" align="right" valign="bottom" sdval="0" sdnum="1033;">0</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<p>The assessment is now done, and output can be viewed by the user.</p>
+				
+				<div id="piechart" style="height: 300px; width: 100%;"></div>
+				
+			</section>
+			
+			
+		</div>
+	</body>
+</html>
+
+<script>
+function selectedPreparedness(){
+
+	var option2Array = document.querySelectorAll('[id^="option-2"]')
+	
+	for (var i = 0, len = option2Array.length; i < len; i++) {
+		if( option2Array[i].checked ) {
+			document.getElementById('result-percent').innerText = option2Array[i].value + " points";
+			document.getElementById('result-percent').style.width = (option2Array[i].value * 33.33) + '%';
+		}
+	}
+
+}
+
+function selectedPreparedness2(){
+
+	var option3Array = document.querySelectorAll('[id^="option-3"]')
+	
+	for (var i = 0, len = option3Array.length; i < len; i++) {
+		if( option3Array[i].checked ) {
+			document.getElementById('result2-percent').innerText = option3Array[i].value + " points";
+			document.getElementById('result2-percent').style.width = (option3Array[i].value * 33.33) + '%';
+		}
+	}
+
+}
+
+</script>
+
+<style>
+
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+
+#main_section {
+	margin: 5% 12%;
+}
+
+h2{
+	font-size: 40px;
+}
+
+h3{
+	font-size: 32px;
+}
+
+p{
+	font-size: 21px;
+	margin-bottom: 4%;
+}
+
+#option-menu2, #option-menu3{
+	float: left;
+}
+
+#selection2options {
+	clear: both;
+}
+
+#result-container, #result2-container {
+	width: 250px;
+	float: right;
+	margin-right: 20%;
+	margin-top: 5%;
+	color: #000;
+    background-color: #f1f1f1;
+	height: 36px;
+}
+
+#result2-container {
+	
+}
+
+#result-percent, #result2-percent {
+	color: #fff;
+    background-color: #4CAF50;
+	text-align: center;
+	height: 100%;
+	line-height: 36px;
+}
+
+#twoOrMoreQns {
+	clear: both;
+}
+
+.td_style {
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	border-left: 1px solid #000000; 
+	border-right: 1px solid #000000;
+}
+
+.redBg_whiteColor {
+	background-color: #ED2939;
+	color: white;
+}
+
+</style>
