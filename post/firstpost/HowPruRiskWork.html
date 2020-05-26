@@ -17,7 +17,12 @@
 			]);
 
 			var options = {
-			  title: 'Your Business Risk'
+			  title: 'Your Business Risk',
+			  tooltip: {
+					text: 'none'
+			  },
+			  pieSliceText: "none",
+			  sliceVisibilityThreshold: .1
 			};
 
 			var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -96,28 +101,28 @@
 						<div style='padding: 10px;'>
 							<label style=' padding: 5px; font-size: 2.2rem;'>
 								<input type='radio' name='select4option' id='option-21' value='0' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
-								a. Did not prepared at all
+								a. Unprepared
 							</label>
 						</div>
 						
 						<div style='padding: 10px;'>
 							<label style=' padding: 5px; font-size: 2.2rem;'>
 								<input type='radio' name='select4option' checked='true' id='option-22' value='1' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
-								b. Prepared a bit
+								b. Less prepared
 							</label>
 						</div>
 						
 						<div style='padding: 10px;'>
 							<label style=' padding: 5px; font-size: 2.2rem;'>
 								<input type='radio' name='select4option' id='option-23' value='2' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
-								c. Prepared quite okay
+								c. Moderately prepared
 							</label>
 						</div>
 						
 						<div style='padding: 10px;'>
 							<label for='option-24' style=' padding: 5px; font-size: 2.2rem;'>
 								<input type='radio' name='select4option' id='option-24' value='3' style='transform: scale(1.6); margin-right: 10px; vertical-align: middle; margin-top: -2px;' />
-								d. Prepared very well
+								d. Well-prepared
 							</label>
 						</div>
 						
@@ -166,9 +171,9 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Qn 2: 3 points out of a maximum of 3 points</p>
 				
 				<p>The preparedness of cyberattack risk <br/>
-				= Total points selected / Total points of Cyberattack risk <br/>
-				= (  2  +  3  )  points / (  3  +  3  )  points <br/>
-				= 2.5 points >= 2 points (Prepared quite okay or more)
+				= Total points selected / Total number of qns for Cyberattack risk <br/>
+				= (  2  +  3  )  points / 2 qns <br/>
+				= 2.5 points >= 2 points (Moderately Prepared or More)
 				</p>
 				
 				<p>
@@ -184,14 +189,75 @@
 					Rank order/priorities can be obtained from survey results done by industry experts, an example of risk 	ranking in the manufacturing industry is shown below:
 				</p>
 				
-				<div style="text-align: center;margin-bottom: 5%;">
+				<div style="text-align: left;float: left;display: inline-block;width: 50%">
 					<figure>
-					  <img src="Top10ManufactoringRisk.png" alt="Top 10 Manufactoring Risk" style="width:45%">
-					  <figcaption>Fig.1 - A list of Top 20 Manufactoring Risk from <a href="https://www.bdo.com/insights/industries/manufacturing-distribution/2017-bdo-manufacturing-riskfactor-report/2017-bdo-manufacturing-riskfactor-report" target="_blank">BDO</a></figcaption>
-					</figure>
+					  <img src="Top10ManufactoringRisk.png" alt="Top 10 Manufactoring Risk" style="width:100%">
+					  <figcaption style="width:100%;display: inline-block;">Fig.1 - A list of Top 20 Manufactoring Risk from <a href="https://www.bdo.com/insights/industries/manufacturing-distribution/2017-bdo-manufacturing-riskfactor-report/2017-bdo-manufacturing-riskfactor-report" target="_blank">BDO</a></figcaption>
+					</figure style="float: right;">
+				</div>
+				<div style="float: right;display: inline-block;margin: 2% 0%">
+					<table cellspacing="0" border="0">
+						<colgroup width="64"></colgroup>
+						<colgroup width="294"></colgroup>
+						<tbody>
+							<tr>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="left" valign="bottom"><font color="#000000">Rank</font></td>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle"><font face="Arial" color="#000000">Top risk factors in Manufactoring</font></td>
+							</tr>
+							<tr>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="center" valign="bottom" sdval="1" sdnum="1033;"><font color="#000000">1</font></td>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle"><font face="Arial" color="#000000">Supply Chain Risk</font></td>
+							</tr>
+							<tr>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="center" valign="bottom" sdval="2" sdnum="1033;"><font color="#000000">2</font></td>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFFF"><font face="Arial" color="#000000">Corporate governance/compliance burden</font></td>
+							</tr>
+							<tr>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="center" valign="bottom" sdval="3" sdnum="1033;"><font color="#000000">3</font></td>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFFF"><font face="Arial" color="#000000">Key Person Loss</font></td>
+							</tr>
+							<tr>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="center" valign="bottom" sdval="4" sdnum="1033;"><font color="#000000">4</font></td>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFFF"><font face="Arial" color="#000000">Workforce shortage</font></td>
+							</tr>
+							<tr>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="center" valign="bottom" sdval="5" sdnum="1033;"><font color="#000000">5</font></td>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle"><font face="Arial" color="#000000">Cash Flow</font></td>
+							</tr>
+							<tr>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="34" align="center" valign="bottom" sdval="6" sdnum="1033;"><font color="#000000">6</font></td>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFFF"><font face="Arial" color="#000000">Cyber Vulnerabilities (Advanced Manufacturing 4.0)</font></td>
+							</tr>
+							<tr>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="center" valign="bottom" sdval="7" sdnum="1033;"><font color="#000000">7</font></td>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFFF"><font face="Arial" color="#000000">Failure to innovate/ meet customer needs</font></td>
+							</tr>
+							<tr>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="center" valign="bottom" sdval="8" sdnum="1033;"><font color="#000000">8</font></td>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFFF"><font face="Arial" color="#000000">Product Liability</font></td>
+							</tr>
+							<tr>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="center" valign="bottom" sdval="9" sdnum="1033;"><font color="#000000">9</font></td>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFFF"><font face="Arial" color="#000000">Reputational Risk</font></td>
+							</tr>
+							<tr>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="center" valign="bottom" sdval="10" sdnum="1033;"><font color="#000000">10</font></td>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFFF"><font face="Arial" color="#000000">Business Continuity Succession Planning</font></td>
+							</tr>
+							<tr>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="center" valign="bottom" sdval="11" sdnum="1033;"><font color="#000000">11</font></td>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle" bgcolor="#FFFFFF"><font face="Arial" color="#000000">Intellectual Property</font></td>
+							</tr>
+							<tr>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="20" align="center" valign="bottom" sdval="12" sdnum="1033;"><font color="#000000">12</font></td>
+								<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" align="left" valign="middle"><font face="Arial" color="#000000">Major Project Failure</font></td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 				
-				<p>
+				
+				<p style="clear: both;margin-top: 5%;">
 					With the predefined priorities risk, we can sort the result easily as shown below. <br/>
 					First, identified those risk that has preparedness rating below 2.
 				</p>
@@ -321,6 +387,17 @@ h3{
 p{
 	font-size: 21px;
 	margin-bottom: 4%;
+}
+
+figure {
+    display: table;
+}
+img, figcaption {
+    display: table-cell;
+    vertical-align: bottom;
+}
+figcaption {
+    padding-left: 4px;
 }
 
 #option-menu2, #option-menu3{
